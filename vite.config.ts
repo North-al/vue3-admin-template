@@ -8,7 +8,7 @@ export default ({ mode }: { mode: string }) => {
 	const env = loadEnv(mode, process.cwd(), '') as any
 
 	return defineConfig({
-		base: env.PROD ? '/dist' : '/',
+		base: './',
 		plugins: [vue(), ...plugins(env)],
 		resolve: {
 			alias: [{ find: '~/', replacement: `${resolve(__dirname, 'src')}/` }]
