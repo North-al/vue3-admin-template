@@ -1,12 +1,12 @@
 <template>
 	<el-config-provider :size="size" :z-index="zIndex">
-		<div class="app">
-			<el-container class="app-container">
-				<el-aside class="app-aside">Aside</el-aside>
+		<div class="layout">
+			<el-container class="layout-container">
+				<el-aside class="layout-aside">Aside</el-aside>
 				<el-container>
-					<el-header class="app-header">Header</el-header>
-					<el-main class="app-main">Main</el-main>
-					<el-footer class="app-footer">Copyright © North 2022</el-footer>
+					<el-header class="layout-header">Header</el-header>
+					<el-main class="layout-main">Main</el-main>
+					<el-footer class="layout-footer">Copyright © North 2022</el-footer>
 				</el-container>
 			</el-container>
 		</div>
@@ -28,7 +28,7 @@ const {
 </script>
 
 <style lang="scss" scoped>
-.app {
+.layout {
 	&-container {
 		--at-apply: h-[100vh];
 	}
