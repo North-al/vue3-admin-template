@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
 	  	uses: actions/checkout@v3
 		with:
           persist-credentials: false
 
       # Runs a single command using the runners shell
-      - name: Install and Build 🔧
+      - name: Install and Build
         run: |
 			npm install
 			npm run build
