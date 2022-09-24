@@ -9,25 +9,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+	build:
+    	runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout
-	  	uses: actions/checkout@v3
-		with:
-          persist-credentials: false
+		steps:
+			- name: Checkout
+				uses: actions/checkout@v3
+				with:
+					persist-credentials: false
 
-      # Runs a single command using the runners shell
-      - name: Install and Build
-        run: |
-			npm install
-			npm run build
+			- name: Install and Build
+				run: |
+					npm install
+					npm run build
 
-      - name: Deploy
-	  	uses: JamesIves/github-pages-deploy-action@v4.3.3
-		with:
-           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-           BRANCH: gh-pages
-           FOLDER: dist
-		   CLEAN: true
+			- name: Deploy
+				uses: JamesIves/github-pages-deploy-action@v4.3.3
+				with:
+					ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+					BRANCH: gh-pages
+					FOLDER: dist
+					CLEAN: true
