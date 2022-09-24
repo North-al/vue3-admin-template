@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+	--at-apply: h-[100vh] w-full text-gray-500 dark:bg-$dark-bg dark:text-$dark-text;
+}
+
