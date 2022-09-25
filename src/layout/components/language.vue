@@ -1,8 +1,6 @@
 <template>
 	<div mx-8px>
-		<el-tooltip content="菜单折叠" placement="bottom">
-			<bx:menu @click="toggleMenuCollapse" text-20px n-hover-gray-500 cursor-pointer outline-none></bx:menu>
-		</el-tooltip>
+		<cil:language @click="toggleMenuCollapse" text-18px n-hover-gray-500 cursor-pointer outline-none></cil:language>
 	</div>
 </template>
 

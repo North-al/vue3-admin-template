@@ -2,10 +2,9 @@
 	<el-config-provider :size="size" :z-index="zIndex">
 		<div class="layout">
 			<el-container class="layout-container">
+				<!-- 左菜单 -->
+				<side-bar v-if="around === 'left'"></side-bar>
 				<el-container>
-					<!-- 左菜单 -->
-					<side-bar v-if="around === 'left'"></side-bar>
-
 					<!-- 头部 -->
 					<el-header class="layout-header">
 						<nav-bar></nav-bar>
@@ -19,6 +18,7 @@
 					<!-- 页尾 -->
 					<el-footer class="layout-footer">Copyright © North 2022</el-footer>
 				</el-container>
+
 				<!-- 右菜单 -->
 				<side-bar v-if="around === 'right'"></side-bar>
 			</el-container>
