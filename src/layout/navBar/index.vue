@@ -1,6 +1,6 @@
 <template>
 	<div flex-between h-full>
-		<div v-if="sideBar.around === 'right'">
+		<div v-if="sideBar.around === 'left'">
 			<collapse></collapse>
 		</div>
 		<div>中</div>
