@@ -1,5 +1,12 @@
 export const useConfigStore = defineStore('template-config-store', () => {
-	const config: IConfig = reactive({
+	const sideBar = reactive<ISideBar>({
+		width: 270,
+		backgroundColor: '#121212',
+		collapse: false,
+		around: 'right'
+	})
+
+	const elementConfig = reactive<IElementConfig>({
 		locale: 'zh-cn',
 		size: 'small',
 		zIndex: 3000,
@@ -8,14 +15,17 @@ export const useConfigStore = defineStore('template-config-store', () => {
 		},
 		message: {
 			max: 10
-		},
-		sideBar: {
-			width: '200px',
-			backgroundColor: '#3d3d3d'
 		}
 	})
 
+	const config = reactive<IConfig>({
+		...elementConfig,
+		...sideBar
+	})
+
 	return {
-		config
+		config,
+		elementConfig,
+		sideBar
 	}
 })
