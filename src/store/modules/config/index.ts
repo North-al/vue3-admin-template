@@ -3,7 +3,7 @@ export const useConfigStore = defineStore('template-config-store', () => {
 		width: 270,
 		backgroundColor: '#121212',
 		collapse: false,
-		around: 'right'
+		around: 'left'
 	})
 
 	const elementConfig = reactive<IElementConfig>({

@@ -12,8 +12,8 @@
 <script setup lang="ts">
 import type { RouteRecordRaw } from 'vue-router'
 import { useConfigStore } from '~/store'
-import Menu from './menu.vue'
-import UserAvatar from './user-avatar.vue'
+import Menu from '../components/menu.vue'
+import UserAvatar from '../components/user-avatar.vue'
 
 const { options } = useRouter()
 

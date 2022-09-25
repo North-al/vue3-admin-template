@@ -2,7 +2,7 @@
 	<div mx-8px>
 		<akar-icons:github-fill
 			@click="jumpGithub"
-			text-16px
+			text-18px
 			n-hover-gray-500
 			cursor-pointer
 			outline-none

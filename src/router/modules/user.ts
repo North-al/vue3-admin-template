@@ -40,6 +40,12 @@ export const userRoute: RouteRecordRaw[] = [
 					keepAlive: false,
 					order: 2
 				}
+			},
+			{
+				path: 'setting',
+				name: 'UserSetting',
+				component: () => import('~/pages/user/setting.vue'),
+				meta: setMeta('网站设置', 'ant-design:setting-outlined', { hidden: true })
 			}
 		]
 	}

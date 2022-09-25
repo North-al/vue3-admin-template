@@ -1,8 +1,8 @@
 <template>
 	<div mx-8px>
-		<el-tooltip content="菜单折叠" placement="bottom">
-			<bx:menu @click="toggleMenuCollapse" text-20px n-hover-gray-500 cursor-pointer outline-none></bx:menu>
-		</el-tooltip>
+		<!-- <el-tooltip content="菜单折叠" placement="bottom"> -->
+		<gg:menu @click="toggleMenuCollapse" text-22px n-hover-gray-500 cursor-pointer outline-none></gg:menu>
+		<!-- </el-tooltip> -->
 	</div>
 </template>
 
