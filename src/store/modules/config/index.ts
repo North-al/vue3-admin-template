@@ -26,17 +26,15 @@ export const useConfigStore = defineStore('N-config-store', () => {
 	}
 })
 
-// export const subscribeConfigStore = () => {
-const key = useConfigStore.$id + 'key'
-const instance = useConfigStore()
+export const subscribeConfigStore = () => {
+	const key = useConfigStore.$id + 'key'
+	const instance = useConfigStore()
 
-instance.$subscribe((_, state) => {
-	localStorage.setItem(key, JSON.stringify(state))
-})
+	instance.$subscribe((_, state) => {
+		localStorage.setItem(key, JSON.stringify(state))
+	})
 
-const cache_state = localStorage.getItem(key)
+	const cache_state = localStorage.getItem(key)
 
-if (cache_state) instance.$state = JSON.parse(cache_state)
-// }
-
-// subscribeConfigStore()
+	if (cache_state) instance.$state = JSON.parse(cache_state)
+}

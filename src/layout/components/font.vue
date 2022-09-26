@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { useConfigStore } from '~/store'
+import { useConfigStore, subscribeConfigStore } from '~/store'
 
 type IDropdown = { title: string; value: 'default' | 'small' | 'large' }
 const dropdown: Array<IDropdown> = [
@@ -31,6 +31,7 @@ const dropdown: Array<IDropdown> = [
 const store = useConfigStore()
 const handleMenuItem = (dropdown: IDropdown) => {
 	store.elementConfig.size = dropdown.value
+	subscribeConfigStore()
 }
 </script>
 
