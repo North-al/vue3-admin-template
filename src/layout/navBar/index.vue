@@ -34,13 +34,6 @@ watch(
 		immediate: true
 	}
 )
-
-// const filterComponents =
-// 	store.sideBar.around === 'left'
-// 		? [...renderComponents].splice(0, renderComponents.length - 1)
-// 		: [...renderComponents]
-
-console.log({ filterComponents })
 </script>
 
 <style lang="scss" scoped></style>
