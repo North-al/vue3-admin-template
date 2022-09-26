@@ -21,8 +21,26 @@ import setting from '../components/setting.vue'
 const store = useConfigStore()
 
 const renderComponents = [Font, language, github, setting, collapse]
-const filterComponents =
-	store.sideBar.around === 'left' ? renderComponents.splice(0, renderComponents.length - 1) : renderComponents
+
+const filterComponents = shallowRef({})
+watch(
+	() => store.sideBar.around,
+	(val: 'left' | 'right') => {
+		val === 'left'
+			? (filterComponents.value = [...renderComponents].splice(0, renderComponents.length - 1))
+			: (filterComponents.value = [...renderComponents])
+	},
+	{
+		immediate: true
+	}
+)
+
+// const filterComponents =
+// 	store.sideBar.around === 'left'
+// 		? [...renderComponents].splice(0, renderComponents.length - 1)
+// 		: [...renderComponents]
+
+console.log({ filterComponents })
 </script>
 
 <style lang="scss" scoped></style>

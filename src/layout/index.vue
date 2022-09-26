@@ -1,9 +1,7 @@
 <template>
-	<el-config-provider
-		:size="store.elementConfig.size"
-		:z-index="store.elementConfig.zIndex"
-		:lang="store.elementConfig.locale === 'zh-cn' ? elementLangEn : elementLangZhCn"
-	>
+	<!-- :lang="store.elementConfig.locale === 'zh-cn' ? elementLangEn : elementLangZhCn" -->
+
+	<el-config-provider :size="store.elementConfig.size" :z-index="store.elementConfig.zIndex">
 		<div class="layout">
 			<el-container class="layout-container">
 				<!-- 左菜单 -->
