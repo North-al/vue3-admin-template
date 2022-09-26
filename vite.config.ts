@@ -11,7 +11,13 @@ export default ({ mode }: { mode: string }) => {
 		base: env.PROD ? './vue3-admin-template' : './',
 		plugins: [vue(), ...plugins(env)],
 		resolve: {
-			alias: [{ find: '~/', replacement: `${resolve(__dirname, 'src')}/` }]
+			alias: [
+				{ find: '~/', replacement: `${resolve(__dirname, 'src')}/` },
+				{
+					find: 'vue-i18n',
+					replacement: 'vue-i18n/dist/vue-i18n.cjs.js'
+				}
+			]
 		},
 		build: {
 			target: 'es2015',

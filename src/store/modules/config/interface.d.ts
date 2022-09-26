@@ -6,7 +6,7 @@ interface ISideBar {
 }
 
 interface IElementConfig {
-	locale: 'zh-cn' | 'en'
+	locale: 'zh_CN' | 'en'
 	size: 'default' | 'small' | 'large'
 	zIndex: number
 	button: { autoInsertSpace: boolean }

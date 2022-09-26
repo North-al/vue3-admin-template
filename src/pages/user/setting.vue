@@ -1,6 +1,6 @@
 <template>
 	<header flex select-none items-center class="setting">
-		<icons8:left-arrow text-22px n-hover-gray-500></icons8:left-arrow>
+		<icons8:left-arrow text-22px n-hover-gray-500 @click="back"></icons8:left-arrow>
 		<ci:line-xl text-gray-500 text-20px></ci:line-xl>
 		<div text-22px font-bold mx-10px>设置中心</div>
 		<el-tag type="success">当前配置</el-tag>
@@ -33,5 +33,10 @@ const { sideBar } = storeToRefs(useConfigStore())
 
 const changeSideBarAround = (val: string) => {
 	console.log(`output->val`, val)
+}
+
+const router = useRouter()
+const back = () => {
+	router.back()
 }
 </script>

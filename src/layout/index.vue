@@ -1,7 +1,5 @@
 <template>
-	<!-- :lang="store.elementConfig.locale === 'zh-cn' ? elementLangEn : elementLangZhCn" -->
-
-	<el-config-provider :size="store.elementConfig.size" :z-index="store.elementConfig.zIndex">
+	<el-config-provider :size="store.elementConfig.size" :z-index="store.elementConfig.zIndex" :locale="locale">
 		<div class="layout">
 			<el-container class="layout-container">
 				<!-- 左菜单 -->
@@ -33,10 +31,21 @@ import { useConfigStore } from '~/store'
 import sideBar from './sideBar/index.vue'
 import navBar from './navBar/index.vue'
 import pageFooter from './pageFooter/index.vue'
-import elementLangEn from 'element-plus/es/locale/lang/en'
-import elementLangZhCn from 'element-plus/es/locale/lang/zh-cn'
+import En from 'element-plus/es/locale/lang/en'
+import ZhCn from 'element-plus/lib/locale/lang/zh-cn'
+import { getCurrentLanguage } from '~/utils'
 
 const store = useConfigStore()
+
+const language = ref(localStorage.getItem('N-language-key') || getCurrentLanguage() || 'zh_CN')
+const locale = computed(() => (language.value === 'zh_CN' ? ZhCn : En))
+watch(
+	() => store.elementConfig.locale,
+	(val: string) => (language.value = val),
+	{
+		immediate: true
+	}
+)
 </script>
 
 <style lang="scss" scoped>

@@ -4,7 +4,10 @@
 			<bx:font-size text-20px n-hover-gray-500 cursor-pointer outline-none></bx:font-size>
 			<template #dropdown>
 				<el-dropdown-menu>
-					<p py-10px px-20px>点击设置组件尺寸</p>
+					<p py-10px px-20px>
+						<span>当前组件尺寸：</span>
+						<el-tag>{{ { default: '默认', small: '小', large: '大' }[store.elementConfig.size] }}</el-tag>
+					</p>
 					<el-dropdown-item v-for="drop in dropdown" :key="drop.value" :command="drop" :divided="true">
 						<fontisto:font mx-6px text-10px></fontisto:font>
 						<span px-2px>{{ drop.title }}</span>
@@ -27,7 +30,6 @@ const dropdown: Array<IDropdown> = [
 
 const store = useConfigStore()
 const handleMenuItem = (dropdown: IDropdown) => {
-	console.log(`output->dropdown`, dropdown)
 	store.elementConfig.size = dropdown.value
 }
 </script>

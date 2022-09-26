@@ -10,7 +10,14 @@ export const AutoImportPlugins = () =>
 			/\.vue\?vue/, // .vue
 			/\.md$/ // .md
 		],
-		imports: ['vue', 'vue-router', 'pinia'],
+		imports: [
+			'vue',
+			'vue-router',
+			'pinia',
+			{
+				'vue-i18n': ['useI18n']
+			}
+		],
 		dts: './src/interface/auto-imports.d.ts',
 		eslintrc: {
 			enabled: false, // 改成true生成json文件
