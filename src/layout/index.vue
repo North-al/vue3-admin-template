@@ -1,9 +1,13 @@
 <template>
-	<el-config-provider :size="size" :z-index="zIndex">
+	<el-config-provider
+		:size="store.elementConfig.size"
+		:z-index="store.elementConfig.zIndex"
+		:lang="store.elementConfig.locale === 'zh-cn' ? elementLangEn : elementLangZhCn"
+	>
 		<div class="layout">
 			<el-container class="layout-container">
 				<!-- 左菜单 -->
-				<side-bar v-if="around === 'left'"></side-bar>
+				<side-bar v-if="store.sideBar.around === 'left'"></side-bar>
 				<el-container>
 					<!-- 头部 -->
 					<el-header class="layout-header">
@@ -16,11 +20,11 @@
 					</el-main>
 
 					<!-- 页尾 -->
-					<el-footer class="layout-footer">Copyright © North 2022</el-footer>
+					<page-footer></page-footer>
 				</el-container>
 
 				<!-- 右菜单 -->
-				<side-bar v-if="around === 'right'"></side-bar>
+				<side-bar v-if="store.sideBar.around === 'right'"></side-bar>
 			</el-container>
 		</div>
 	</el-config-provider>
@@ -30,15 +34,11 @@
 import { useConfigStore } from '~/store'
 import sideBar from './sideBar/index.vue'
 import navBar from './navBar/index.vue'
+import pageFooter from './pageFooter/index.vue'
+import elementLangEn from 'element-plus/es/locale/lang/en'
+import elementLangZhCn from 'element-plus/es/locale/lang/zh-cn'
 
-const {
-	elementConfig: {
-		value: { size, zIndex }
-	},
-	sideBar: {
-		value: { backgroundColor, width, around }
-	}
-} = storeToRefs(useConfigStore())
+const store = useConfigStore()
 </script>
 
 <style lang="scss" scoped>
@@ -48,7 +48,6 @@ const {
 	}
 
 	&-aside {
-		background-color: v-bind(backgroundColor);
 		--at-apply: h-[100vh];
 	}
 

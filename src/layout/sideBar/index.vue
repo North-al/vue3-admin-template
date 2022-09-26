@@ -2,7 +2,7 @@
 	<el-aside
 		class="layout-aside"
 		transition="duration-300"
-		:style="{ width: sideBar.collapse ? '64px' : `${sideBar.width}px` }"
+		:style="{ width: sideBar.collapse ? '64px' : `${sideBar.width}px`, backgroundColor: sideBar.backgroundColor }"
 	>
 		<user-avatar></user-avatar>
 		<Menu :routes="filterRoutes"></Menu>

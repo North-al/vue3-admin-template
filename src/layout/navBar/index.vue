@@ -1,6 +1,6 @@
 <template>
 	<div flex-between h-full>
-		<div v-if="sideBar.around === 'left'">
+		<div v-if="store.sideBar.around === 'left'">
 			<collapse></collapse>
 		</div>
 		<div></div>
@@ -18,11 +18,11 @@ import language from '../components/language.vue'
 import Font from '../components/font.vue'
 import setting from '../components/setting.vue'
 
-const { sideBar } = storeToRefs(useConfigStore())
+const store = useConfigStore()
 
 const renderComponents = [Font, language, github, setting, collapse]
 const filterComponents =
-	sideBar.value.around === 'left' ? renderComponents.splice(0, renderComponents.length - 1) : renderComponents
+	store.sideBar.around === 'left' ? renderComponents.splice(0, renderComponents.length - 1) : renderComponents
 </script>
 
 <style lang="scss" scoped></style>

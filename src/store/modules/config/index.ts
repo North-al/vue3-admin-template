@@ -8,7 +8,7 @@ export const useConfigStore = defineStore('template-config-store', () => {
 
 	const elementConfig = reactive<IElementConfig>({
 		locale: 'zh-cn',
-		size: 'small',
+		size: 'default',
 		zIndex: 3000,
 		button: {
 			autoInsertSpace: true
