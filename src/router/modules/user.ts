@@ -30,17 +30,31 @@ export const userRoute: RouteRecordRaw[] = [
 				}
 			},
 			{
-				path: 'login',
-				name: 'UserLogin',
-				component: () => import('~/pages/user/login.vue'),
-				meta: {
-					icon: 'icon-park-outline:workbench',
-					title: '用户登录',
-					hidden: true,
-					keepAlive: false,
-					order: 2
-				}
+				path: 'test',
+				name: 'UserTest',
+				redirect: 'user/test/setting',
+				meta: setMeta('test', 'ant-design:setting-outlined'),
+				children: [
+					{
+						path: 'setting',
+						name: 'UserSettingTest',
+						component: () => import('~/pages/user/setting.vue'),
+						meta: setMeta('网站设置', 'ant-design:setting-outlined', { hidden: false })
+					}
+				]
 			},
+			// {
+			// 	path: 'login',
+			// 	name: 'UserLogin',
+			// 	component: () => import('~/pages/user/login.vue'),
+			// 	meta: {
+			// 		icon: 'icon-park-outline:workbench',
+			// 		title: '用户登录',
+			// 		hidden: true,
+			// 		keepAlive: false,
+			// 		order: 2
+			// 	}
+			// },
 			{
 				path: 'setting',
 				name: 'UserSetting',
