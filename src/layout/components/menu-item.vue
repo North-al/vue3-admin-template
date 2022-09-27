@@ -5,6 +5,7 @@
 			:index="route.path"
 			v-if="!hasChildrenRoute"
 			hover="dark:bg-[var(--el-color-primary)] dark:text-white bg-[#dfefff]"
+			@click="handleMenuItem"
 		>
 			<Icon :icon="routeMeta.icon" v-if="routeMeta.icon" text-20px></Icon>
 			<template #title>
@@ -37,6 +38,9 @@ const hasChildrenRoute = computed(() => {
 })
 
 const routeMeta = computed(() => props.route.meta as RouteMeta)
+const handleMenuItem = () => {
+	document.title = `North - ${t(routeMeta.value.title!)}`
+}
 </script>
 
 <style lang="scss" scoped></style>

@@ -36,17 +36,35 @@ import ZhCn from 'element-plus/lib/locale/lang/zh-cn'
 import { getCurrentLanguage } from '~/utils'
 import { Storage_Key } from '~/enums'
 
+const route = useRoute()
 const store = useConfigStore()
+const { t } = useI18n()
 
 const language = ref(localStorage.getItem(Storage_Key.locale) || getCurrentLanguage() || 'zh_CN')
 const locale = computed(() => (language.value === 'zh_CN' ? ZhCn : En))
-watch(
+
+const stopElementConfig = watch(
 	() => store.elementConfig.locale,
 	(val: string) => (language.value = val),
 	{
 		immediate: true
 	}
 )
+
+const stopChangeTitle = watch(
+	() => route.fullPath,
+	(val) => {
+		document.title = `North - ${t(route.meta.title!)}`
+	},
+	{
+		immediate: true
+	}
+)
+
+onUnmounted(() => {
+	stopElementConfig()
+	stopChangeTitle()
+})
 </script>
 
 <style lang="scss" scoped>
