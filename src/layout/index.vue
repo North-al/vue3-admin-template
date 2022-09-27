@@ -34,10 +34,11 @@ import pageFooter from './pageFooter/index.vue'
 import En from 'element-plus/es/locale/lang/en'
 import ZhCn from 'element-plus/lib/locale/lang/zh-cn'
 import { getCurrentLanguage } from '~/utils'
+import { Storage_Key } from '~/enums'
 
 const store = useConfigStore()
 
-const language = ref(localStorage.getItem('N-language-key') || getCurrentLanguage() || 'zh_CN')
+const language = ref(localStorage.getItem(Storage_Key.locale) || getCurrentLanguage() || 'zh_CN')
 const locale = computed(() => (language.value === 'zh_CN' ? ZhCn : En))
 watch(
 	() => store.elementConfig.locale,

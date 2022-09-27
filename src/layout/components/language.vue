@@ -5,6 +5,7 @@
 </template>
 
 <script setup lang="ts">
+import { Storage_Key } from '~/enums'
 import { useConfigStore } from '~/store'
 const i18n = useI18n()
 const store = useConfigStore()
@@ -18,7 +19,7 @@ const changeLanguage = () => {
 		language = 'zh_CN'
 	}
 
-	localStorage.setItem('N-language-key', language)
+	localStorage.setItem(Storage_Key.locale, language)
 	store.elementConfig.locale = language
 	i18n.locale.value = language
 }
