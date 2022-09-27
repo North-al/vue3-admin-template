@@ -6,14 +6,8 @@ import { en } from './en'
 import { zh } from './zh'
 
 const messages = {
-	zh_CN: {
-		...zh,
-		test: '测试'
-	},
-	en: {
-		...en,
-		test: 'test'
-	}
+	zh_CN: zh,
+	en
 }
 
 const i18n = createI18n({

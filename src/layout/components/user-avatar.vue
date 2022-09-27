@@ -4,8 +4,8 @@
 			<heroicons-outline:menu-alt-1 n-hover-gray-500 cursor-pointer text-18px outline-none />
 			<template #dropdown>
 				<el-dropdown-menu>
-					<el-dropdown-item>个人中心</el-dropdown-item>
-					<el-dropdown-item>退出登录</el-dropdown-item>
+					<el-dropdown-item>{{ t('menu.user.center') }}</el-dropdown-item>
+					<el-dropdown-item>{{ t('common.logout') }}</el-dropdown-item>
 				</el-dropdown-menu>
 			</template>
 		</el-dropdown>
@@ -34,8 +34,8 @@
 			/>
 			<template #dropdown>
 				<el-dropdown-menu>
-					<el-dropdown-item>个人中心</el-dropdown-item>
-					<el-dropdown-item>退出登录</el-dropdown-item>
+					<el-dropdown-item>{{ t('menu.user.center') }}</el-dropdown-item>
+					<el-dropdown-item>{{ t('common.logout') }}</el-dropdown-item>
 				</el-dropdown-menu>
 			</template>
 		</el-dropdown>
@@ -46,6 +46,7 @@
 import { useConfigStore } from '~/store'
 
 const { sideBar } = storeToRefs(useConfigStore())
+const { t } = useI18n()
 </script>
 
 <style lang="scss" scoped>

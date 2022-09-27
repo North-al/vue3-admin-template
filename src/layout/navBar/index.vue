@@ -15,12 +15,12 @@ import { useConfigStore } from '~/store'
 import collapse from '../components/collapse.vue'
 import github from '../components/github.vue'
 import language from '../components/language.vue'
-import Font from '../components/font.vue'
+import componentSize from '../components/componentSize.vue'
 import setting from '../components/setting.vue'
 
 const store = useConfigStore()
 
-const renderComponents = [Font, language, github, setting, collapse]
+const renderComponents = [componentSize, language, github, setting, collapse]
 
 const filterComponents = shallowRef({})
 watch(

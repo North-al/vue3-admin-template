@@ -8,58 +8,26 @@ export const userRoute: RouteRecordRaw[] = [
 		name: 'User',
 		redirect: '/user/index',
 		component: Layout,
-		meta: setMeta('用户管理', 'icon-park-outline:workbench'),
+		meta: setMeta('menu.user.management', 'fa-regular:user'),
 
 		children: [
 			{
 				path: '/user/index',
 				name: 'UserIndex',
 				component: () => import('~/pages/user/index.vue'),
-				meta: setMeta('用户中心', 'icon-park-outline:workbench', { order: 1 })
+				meta: setMeta('menu.user.center', 'bxs:user-account', { order: 1 })
 			},
 			{
 				path: 'detail',
 				name: 'UserDetail',
 				component: () => import('~/pages/user/detail.vue'),
-				meta: {
-					icon: 'icon-park-outline:workbench',
-					title: '用户详情',
-					hidden: false,
-					keepAlive: false,
-					order: 3
-				}
+				meta: setMeta('menu.user.detail', 'mdi:card-account-details-outline', { order: 3 })
 			},
-			{
-				path: 'test',
-				name: 'UserTest',
-				redirect: 'user/test/setting',
-				meta: setMeta('test', 'ant-design:setting-outlined'),
-				children: [
-					{
-						path: 'setting',
-						name: 'UserSettingTest',
-						component: () => import('~/pages/user/setting.vue'),
-						meta: setMeta('网站设置', 'ant-design:setting-outlined', { hidden: false })
-					}
-				]
-			},
-			// {
-			// 	path: 'login',
-			// 	name: 'UserLogin',
-			// 	component: () => import('~/pages/user/login.vue'),
-			// 	meta: {
-			// 		icon: 'icon-park-outline:workbench',
-			// 		title: '用户登录',
-			// 		hidden: true,
-			// 		keepAlive: false,
-			// 		order: 2
-			// 	}
-			// },
 			{
 				path: 'setting',
 				name: 'UserSetting',
 				component: () => import('~/pages/user/setting.vue'),
-				meta: setMeta('网站设置', 'ant-design:setting-outlined', { hidden: true })
+				meta: setMeta('menu.user.setting', 'bxs:user-account', { hidden: true })
 			}
 		]
 	}

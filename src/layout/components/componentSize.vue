@@ -5,12 +5,12 @@
 			<template #dropdown>
 				<el-dropdown-menu>
 					<p py-10px px-20px>
-						<span>当前组件尺寸：</span>
-						<el-tag>{{ { default: '默认', small: '小', large: '大' }[store.elementConfig.size] }}</el-tag>
+						<span>{{ t('layout.componentSize') }}：</span>
+						<el-tag>{{ t(`layout.${store.elementConfig.size}`) }}</el-tag>
 					</p>
 					<el-dropdown-item v-for="drop in dropdown" :key="drop.value" :command="drop" :divided="true">
 						<fontisto:font mx-6px text-10px></fontisto:font>
-						<span px-2px>{{ drop.title }}</span>
+						<span px-2px>{{ t(drop.title) }}</span>
 					</el-dropdown-item>
 				</el-dropdown-menu>
 			</template>
@@ -21,11 +21,12 @@
 <script setup lang="ts">
 import { useConfigStore } from '~/store'
 
+const { t } = useI18n()
 type IDropdown = { title: string; value: 'default' | 'small' | 'large' }
 const dropdown: Array<IDropdown> = [
-	{ title: '小', value: 'small' },
-	{ title: '默认', value: 'default' },
-	{ title: '大', value: 'large' }
+	{ title: 'layout.small', value: 'small' },
+	{ title: 'layout.default', value: 'default' },
+	{ title: 'layout.large', value: 'large' }
 ]
 
 const store = useConfigStore()

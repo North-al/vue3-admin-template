@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 import Layout from '~/layout/index.vue'
+import { setMeta } from '../helper'
 
 export const workbenchRoute: RouteRecordRaw[] = [
 	{
@@ -7,25 +8,13 @@ export const workbenchRoute: RouteRecordRaw[] = [
 		name: 'Workbench',
 		redirect: '/workbench/index',
 		component: Layout,
-		meta: {
-			icon: 'icon-park-outline:workbench',
-			title: '工作台',
-			hidden: false,
-			keepAlive: false,
-			order: 1
-		},
+		meta: setMeta('控制台', 'icon-park-outline:workbench', { order: 1 }),
 		children: [
 			{
 				path: 'index',
 				name: 'WorkbenchIndex',
 				component: () => import('~/pages/workbench/index.vue'),
-				meta: {
-					icon: 'icon-park-outline:workbench',
-					title: '控制台',
-					hidden: false,
-					keepAlive: false,
-					order: 1
-				}
+				meta: setMeta('menu.workbench', 'icon-park-outline:workbench', { order: 1 })
 			}
 		]
 	}

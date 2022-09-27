@@ -58,12 +58,5 @@ routes
 		border: none;
 		user-select: none;
 	}
-
-	:deep(.el-sub-menu__icon-arrow) {
-		transform: rotate(90deg) !important;
-	}
-	:deep(.is-opened) .el-sub-menu__icon-arrow {
-		transform: rotate(0deg) !important;
-	}
 }
 </style>
