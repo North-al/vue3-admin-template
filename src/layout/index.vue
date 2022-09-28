@@ -70,11 +70,11 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .layout {
 	&-container {
-		--at-apply: h-[100vh];
+		--at-apply: h-[100vh] bg-[var(--light-bg)] dark:bg-[var(--dark-bg)];
 	}
 
 	&-aside {
-		--at-apply: h-[100vh];
+		--at-apply: h-[100vh] bg-[var(--light-side)] dark:bg-[var(--dark-side)];
 	}
 
 	&-header {

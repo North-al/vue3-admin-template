@@ -8,7 +8,7 @@ export const initElementConfigStore = () => {
 
 		return reactive<IElementConfig>({ ...JSON.parse(data) })
 	} catch (error) {
-		console.error('😅 init config store data fail set default value')
+		console.error('😅 init element config store data fail set default value')
 		return reactive<IElementConfig>({
 			locale: (localStorage.getItem(Storage_Key.locale) || getCurrentLanguage() || 'zh_CN') as 'zh_CN' | 'en',
 			size: 'default',
@@ -28,12 +28,25 @@ export const initSideBarConfigStore = () => {
 		const data = window.localStorage.getItem(Storage_Key.sideBar) ?? ''
 		return reactive<ISideBar>({ ...JSON.parse(data) })
 	} catch (error) {
-		console.error('😅 init config store data fail, set default value')
+		console.error('😅 init sidebar config store data fail, set default value')
 		return reactive<ISideBar>({
 			width: 270,
-			backgroundColor: '#121212',
+			backgroundColor: '#fff',
+			darkBackgroundColor: '#121212',
 			collapse: false,
 			around: 'left'
+		})
+	}
+}
+
+export const initGlobalConfigStore = () => {
+	try {
+		const data = window.localStorage.getItem(Storage_Key.global) ?? ''
+		return reactive<IGlobalConfig>({ ...JSON.parse(data) })
+	} catch (error) {
+		console.error('😅 init global config store fail, set default value')
+		return reactive<IGlobalConfig>({
+			isDark: window.matchMedia('(prefers-color-scheme: dark)').matches || false
 		})
 	}
 }

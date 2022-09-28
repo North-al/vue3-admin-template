@@ -10,6 +10,8 @@ declare module '@vue/runtime-core' {
     'AkarIcons:bell': typeof import('~icons/akar-icons/bell')['default']
     'AkarIcons:githubFill': typeof import('~icons/akar-icons/github-fill')['default']
     'Bx:fontSize': typeof import('~icons/bx/font-size')['default']
+    'Bx:moon': typeof import('~icons/bx/moon')['default']
+    'Bx:sun': typeof import('~icons/bx/sun')['default']
     'Ci:lineXl': typeof import('~icons/ci/line-xl')['default']
     'Cil:language': typeof import('~icons/cil/language')['default']
     ElAside: typeof import('element-plus/es')['ElAside']

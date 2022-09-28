@@ -2,7 +2,7 @@
 	<el-aside
 		class="layout-aside"
 		transition="duration-300"
-		:style="{ width: sideBar.collapse ? '64px' : `${sideBar.width}px`, backgroundColor: sideBar.backgroundColor }"
+		:style="{ width: config.sideBar.collapse ? '64px' : `${config.sideBar.width}px`, backgroundColor: background }"
 	>
 		<user-avatar></user-avatar>
 		<Menu :routes="filterRoutes"></Menu>
@@ -23,7 +23,11 @@ const {
 
 const filterRoutes: RouteRecordRaw[] = []
 
-const { sideBar } = storeToRefs(useConfigStore())
+const config = useConfigStore()
+
+const background = computed(() =>
+	config.globalConfig.isDark ? config.sideBar.darkBackgroundColor : config.sideBar.backgroundColor
+)
 
 routes
 	.sort((a, b) => a.meta!.order - b.meta!.order)

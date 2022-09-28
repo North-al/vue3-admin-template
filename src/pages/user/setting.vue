@@ -13,9 +13,14 @@
 			<div w="8%">最大宽度</div>
 			<el-input-number v-model="sideBar.width" :step="2" step-strictly :min="200"></el-input-number>
 		</div>
-		<div my-10px p-10px flex items-center>
+
+		<div my-10px p-10px flex items-center v-if="!globalConfig.isDark">
 			<div w="8%">背景颜色</div>
 			<el-color-picker v-model="sideBar.backgroundColor" />
+		</div>
+		<div my-10px p-10px flex items-center v-else>
+			<div w="8%">背景颜色</div>
+			<el-color-picker v-model="sideBar.darkBackgroundColor" />
 		</div>
 		<div my-10px p-10px flex items-center>
 			<div w="8%">展示方向</div>
@@ -29,7 +34,7 @@
 <script lang="ts" setup>
 import { useConfigStore } from '~/store'
 
-const { sideBar } = storeToRefs(useConfigStore())
+const { sideBar, globalConfig } = storeToRefs(useConfigStore())
 
 const changeSideBarAround = (val: string) => {
 	console.log(`output->val`, val)

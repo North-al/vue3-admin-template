@@ -1,6 +1,7 @@
 interface ISideBar {
 	width: number
 	backgroundColor: string
+	darkBackgroundColor: string
 	collapse: boolean
 	around: 'left' | 'right'
 }
@@ -11,6 +12,10 @@ interface IElementConfig {
 	zIndex: number
 	button: { autoInsertSpace: boolean }
 	message: { max: number }
+}
+
+interface IGlobalConfig {
+	isDark: boolean
 }
 
 interface IConfig extends ISideBar, IElementConfig {}
