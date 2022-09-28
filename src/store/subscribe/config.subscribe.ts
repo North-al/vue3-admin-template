@@ -28,10 +28,8 @@ export const useConfigSubscribe = () => {
 		(val: IGlobalConfig) => {
 			if (val.isDark) {
 				document.documentElement.className = 'dark'
-				// config.sideBar.backgroundColor = '#121212'
 			} else {
 				document.documentElement.className = 'light'
-				// config.sideBar.backgroundColor = '#fff'
 			}
 			window.localStorage.setItem(Storage_Key.global, JSON.stringify(val))
 		},
@@ -46,7 +44,19 @@ export const useConfigSubscribe = () => {
 		config.globalConfig.isDark = media.matches
 	})
 
+	const stopElementTheme = watch(
+		() => config.elementConfig.theme.primary,
+		(val: string) => {
+			const el = document.documentElement
+			getComputedStyle(el).getPropertyValue(`--el-color-primary`)
+			el.style.setProperty('--el-color-primary', val)
+		},
+		{
+			immediate: true
+		}
+	)
+
 	onUnmounted(() => {
-		stopElementConfig(), stopSideBarConfig(), stopGlobalConfig()
+		stopElementConfig(), stopSideBarConfig(), stopGlobalConfig(), stopElementTheme()
 	})
 }
