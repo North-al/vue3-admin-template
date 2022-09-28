@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     'AkarIcons:bell': typeof import('~icons/akar-icons/bell')['default']
     'AkarIcons:githubFill': typeof import('~icons/akar-icons/github-fill')['default']
+    'Bi:arrowLeftRight': typeof import('~icons/bi/arrow-left-right')['default']
     'Bx:fontSize': typeof import('~icons/bx/font-size')['default']
     'Bx:moon': typeof import('~icons/bx/moon')['default']
     'Bx:sun': typeof import('~icons/bx/sun')['default']

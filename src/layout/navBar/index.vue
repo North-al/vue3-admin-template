@@ -17,12 +17,13 @@ import github from '../components/github.vue'
 import language from '../components/language.vue'
 import componentSize from '../components/componentSize.vue'
 import setting from '../components/setting.vue'
+import around from '../components/around.vue'
 import toggleTheme from '../components/toggleTheme.vue'
 import toggleComponentTheme from '../components/toggleComponentTheme.vue'
 
 const store = useConfigStore()
 
-const renderComponents = [componentSize, language, github, toggleComponentTheme, toggleTheme, setting, collapse]
+const renderComponents = [around, componentSize, language, github, toggleComponentTheme, toggleTheme, setting, collapse]
 
 const filterComponents = shallowRef({})
 watch(
