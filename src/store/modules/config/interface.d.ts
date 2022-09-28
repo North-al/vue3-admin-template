@@ -12,6 +12,9 @@ interface IElementConfig {
 	zIndex: number
 	button: { autoInsertSpace: boolean }
 	message: { max: number }
+	theme: {
+		primary: string
+	}
 }
 
 interface IGlobalConfig {

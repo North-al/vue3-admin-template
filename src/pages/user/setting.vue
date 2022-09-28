@@ -24,7 +24,7 @@
 		</div>
 		<div my-10px p-10px flex items-center>
 			<div w="8%">展示方向</div>
-			<el-select v-model="sideBar.around" @change="changeSideBarAround">
+			<el-select v-model="sideBar.around">
 				<el-option value="left" label="靠左显示"></el-option>
 				<el-option value="right" label="靠右显示"></el-option>
 			</el-select>
@@ -35,10 +35,6 @@
 import { useConfigStore } from '~/store'
 
 const { sideBar, globalConfig } = storeToRefs(useConfigStore())
-
-const changeSideBarAround = (val: string) => {
-	console.log(`output->val`, val)
-}
 
 const router = useRouter()
 const back = () => {

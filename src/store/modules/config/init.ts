@@ -18,6 +18,9 @@ export const initElementConfigStore = () => {
 			},
 			message: {
 				max: 10
+			},
+			theme: {
+				primary: '#409eff'
 			}
 		})
 	}
