@@ -15,7 +15,8 @@ export const AutoImportPlugins = () =>
 			'vue-router',
 			'pinia',
 			{
-				'vue-i18n': ['useI18n']
+				'vue-i18n': ['useI18n'],
+				'~/hooks': ['useLoading', 'usePage']
 			}
 		],
 		dts: './src/interface/auto-imports.d.ts',

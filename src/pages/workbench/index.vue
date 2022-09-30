@@ -5,6 +5,8 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
+const [loading, setLoading] = useLoading()
+console.log('useLoading ->', loading.value)
 </script>
 
 <style lang="scss" scoped></style>
