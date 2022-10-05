@@ -1,6 +1,7 @@
 /* eslint-disable spaced-comment */
 /// <reference types="vite/client" />
-
+import 'vue'
+import 'vue-router'
 interface ImportMetaEnv {
 	readonly VITE_APP_PORT: number
 	readonly VITE_OPEN_GZIP: boolean
@@ -12,8 +13,6 @@ interface ImportMeta {
 	readonly env: ImportMetaEnv
 }
 
-import 'vue-router'
-
 declare module 'vue-router' {
 	interface RouteMeta {
 		title?: string
@@ -22,4 +21,8 @@ declare module 'vue-router' {
 		keepAlive?: boolean
 		order: number
 	}
+}
+
+declare global {
+	const ElMessage: typeof import('element-plus/es')['ElMessage']
 }

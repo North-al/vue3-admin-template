@@ -5,5 +5,8 @@ export const menu = {
 		center: 'user center',
 		detail: 'user detail',
 		setting: 'user setting'
+	},
+	system: {
+		interface: 'interface generator'
 	}
 }
