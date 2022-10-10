@@ -2,6 +2,7 @@
 /// <reference types="vite/client" />
 import 'vue'
 import 'vue-router'
+
 interface ImportMetaEnv {
 	readonly VITE_APP_PORT: number
 	readonly VITE_OPEN_GZIP: boolean
