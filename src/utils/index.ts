@@ -1,2 +1,2 @@
 export * from './language'
-export * from './typeJudgment'
+export * from "./typeJudgment"

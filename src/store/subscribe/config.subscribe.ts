@@ -9,10 +9,7 @@ export const useConfigSubscribe = () => {
 		(val: IElementConfig) => {
 			window.localStorage.setItem(Storage_Key.element, JSON.stringify(val))
 		},
-		{
-			deep: true,
-			immediate: true
-		}
+		{ deep: true, immediate: true }
 	)
 
 	const stopSideBarConfig = watch(

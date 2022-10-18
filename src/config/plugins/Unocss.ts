@@ -5,5 +5,5 @@ import { presetUno, presetAttributify, presetIcons, transformerDirectives } from
 export const UnocssPlugin = () =>
 	Unocss({
 		presets: [presetUno(), presetAttributify(), presetIcons()],
-		transformers: [transformerDirectives()]
+		transformers: [transformerDirectives({})]
 	})
